@@ -1,33 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://gbsmlk4aro4q"]
-
-[ext_resource type="Texture2D" uid="uid://fwoi34gq84bg" path="res://Cabezones/assets/sprites/suelo.png" id="1_oj3tl"]
+[gd_scene load_steps=3 format=3 uid="uid://gbsmlk4aro4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgngl"]
-size = Vector2(125, 25)
+size = Vector2(170, 42.5)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_mb258"]
-a = Vector2(0, -35)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yudxw"]
-a = Vector2(-58, -54)
-b = Vector2(-57, 4)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_amid8"]
+a = Vector2(0, -86.6667)
+b = Vector2(0, 43.3333)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("1_oj3tl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 13)
+position = Vector2(-3.17891e-06, 17)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_cgngl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(46, -6)
-shape = SubResource("SegmentShape2D_mb258")
+position = Vector2(-50.6667, -10)
+shape = SubResource("SegmentShape2D_amid8")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(6.66667, 0)
-shape = SubResource("SegmentShape2D_yudxw")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(54, -9.33333)
+shape = SubResource("SegmentShape2D_amid8")
