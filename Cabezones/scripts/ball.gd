@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-@export var kick_force = 600.0
+@export var kick_force = 400.0
 
 func kick(direction: Vector2):
-	# Aplica un impulso en la dirección indicada
-	apply_impulse(direction.normalized() * kick_force)
+	# Aplica una fuerza instantánea
+	apply_impulse(Vector2.ZERO, direction.normalized() * kick_force)

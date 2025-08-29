@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://5i2b10ldj2fe"]
+
+[ext_resource type="Script" uid="uid://dmekyj4ip64hb" path="res://Cabezones/scripts/ball.gd" id="1_n8s22"]
+[ext_resource type="Texture2D" uid="uid://bfu7whkpmpi3n" path="res://Cabezones/assets/sprites/klipartz.com.png" id="2_m0k4k"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_31h7f"]
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oj3w"]
+radius = 64.0
+
+[node name="ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_31h7f")
+inertia = 1.0
+script = ExtResource("1_n8s22")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0558174, 0.0546925)
+texture = ExtResource("2_m0k4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.11758e-22, -2.11758e-22)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_5oj3w")
