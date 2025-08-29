@@ -15,10 +15,10 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	kick_area.monitoring = false  # desactivada por defecto
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Aplicar gravedad
 	if not is_on_floor():
-		velocity.y += gravity * _delta
+		velocity.y += gravity * delta
 	else:
 		can_jump = true
 

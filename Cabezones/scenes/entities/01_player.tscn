@@ -37,14 +37,12 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_xc1q3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_vkyll")
 animation = &"kick"
 frame = 2
 frame_progress = 1.0
 
 [node name="KickArea" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 collision_layer = 2
 priority = 1
 
