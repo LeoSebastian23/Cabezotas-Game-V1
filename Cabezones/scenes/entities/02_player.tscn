@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bc5fq3r4csaxe"]
 
-[ext_resource type="Script" uid="uid://ce72avsont5g7" path="res://Cabezones/scenes/entities/02_player.gd" id="1_eiisu"]
+[ext_resource type="Script" uid="uid://ce72avsont5g7" path="res://Cabezones/scripts/02_player.gd" id="1_eiisu"]
 [ext_resource type="Texture2D" uid="uid://djty6b880nhnt" path="res://Cabezones/assets/sprites/ChatGPT Image 28 ago 2025, 07_50_56 p.m..png" id="2_eiisu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
@@ -16,5 +16,4 @@ texture = ExtResource("2_eiisu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, -3.33786e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f50pn")
