@@ -4,12 +4,14 @@ extends CharacterBody2D
 @export var jump_force = -400.0
 @export var gravity = 1200.0
 @export var kick_force = 800.0
+@export var push_force = 200.0  # fuerza más baja para empujar caminando
 
 @onready var anim = $AnimatedSprite2D
 @onready var kick_area = $KickArea
 
 var can_jump = true
 var screen_size: Vector2
+var kick_active = false
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -38,7 +40,8 @@ func _physics_process(delta):
 	# Detectar input para patear
 	if Input.is_action_just_pressed("kick"):
 		anim.play("kick")
-		kick_area.monitoring = true  # activar área de patada
+		kick_area.monitoring = true
+		kick_active = true  # indicar que se pateó
 
 	# Mover el personaje
 	move_and_slide()
@@ -50,7 +53,16 @@ func _physics_process(delta):
 func _on_KickArea_body_entered(body):
 	if body is RigidBody2D and body.is_in_group("ball"):
 		var direction: Vector2 = (body.global_position - global_position).normalized()
-		body.linear_velocity = direction * kick_force
+		
+		if kick_active:
+			# Patear fuerte
+			body.apply_impulse(Vector2.ZERO, direction * kick_force)
+			kick_active = false
+			kick_area.monitoring = false  # desactivar área tras patear
+		else:
+			# Empujar suavemente al chocar
+			body.apply_impulse(Vector2.ZERO, direction * push_force)
+
 
 
 
