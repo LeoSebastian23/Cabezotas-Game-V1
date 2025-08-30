@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djty6b880nhnt"
-path="res://.godot/imported/ChatGPT Image 28 ago 2025, 07_50_56 p.m..png-b148c3c4751fd811ca3db61f00ecb54d.ctex"
+uid="uid://cgbn46ye57k0a"
+path="res://.godot/imported/fondo tarde.png-9b7c5293975410491a091bab2855f7cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/ChatGPT Image 28 ago 2025, 07_50_56 p.m..png"
-dest_files=["res://.godot/imported/ChatGPT Image 28 ago 2025, 07_50_56 p.m..png-b148c3c4751fd811ca3db61f00ecb54d.ctex"]
+source_file="res://Cabezones/assets/sprites/fondo tarde.png"
+dest_files=["res://.godot/imported/fondo tarde.png-9b7c5293975410491a091bab2855f7cb.ctex"]
 
 [params]
 

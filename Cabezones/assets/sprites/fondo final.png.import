@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bewosvkev2342"
-path="res://.godot/imported/Estadio cibernético iluminado por neón.png-c147ef0036cd72ddf3bcb956da0ae8fc.ctex"
+uid="uid://d3e1px6g7jv1m"
+path="res://.godot/imported/fondo final.png-938b1ff10681bbdcf8fa583266318a95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/Estadio cibernético iluminado por neón.png"
-dest_files=["res://.godot/imported/Estadio cibernético iluminado por neón.png-c147ef0036cd72ddf3bcb956da0ae8fc.ctex"]
+source_file="res://Cabezones/assets/sprites/fondo final.png"
+dest_files=["res://.godot/imported/fondo final.png-938b1ff10681bbdcf8fa583266318a95.ctex"]
 
 [params]
 

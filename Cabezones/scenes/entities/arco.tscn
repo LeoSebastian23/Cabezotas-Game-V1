@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvt2ldsyylhwu"]
 
-[ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/Atardecer en el estadio de fútbol.png" id="1_qsluv"]
+[ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/fondo tarde.png" id="1_qsluv"]
 
 [node name="Node2D" type="Node2D"]
 

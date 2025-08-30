@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctvcnaajrufdi"
-path="res://.godot/imported/Background.jpg-c44d9613493302bf0c8014832c17a4d6.ctex"
+uid="uid://b06pvb1b57smk"
+path="res://.godot/imported/fondo dia.png-71c024839d6a0445b4b641b4b3514ea6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/Background.jpg"
-dest_files=["res://.godot/imported/Background.jpg-c44d9613493302bf0c8014832c17a4d6.ctex"]
+source_file="res://Cabezones/assets/sprites/fondo dia.png"
+dest_files=["res://.godot/imported/fondo dia.png-71c024839d6a0445b4b641b4b3514ea6.ctex"]
 
 [params]
 

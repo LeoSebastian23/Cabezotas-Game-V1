@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfu7whkpmpi3n"
-path="res://.godot/imported/klipartz.com.png-76460830aec995d0e61546518a3cc886.ctex"
+path="res://.godot/imported/balon.png-5203dfac0ff286175ee185e10a7cf01c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/klipartz.com.png"
-dest_files=["res://.godot/imported/klipartz.com.png-76460830aec995d0e61546518a3cc886.ctex"]
+source_file="res://Cabezones/assets/sprites/balon.png"
+dest_files=["res://.godot/imported/balon.png-5203dfac0ff286175ee185e10a7cf01c.ctex"]
 
 [params]
 

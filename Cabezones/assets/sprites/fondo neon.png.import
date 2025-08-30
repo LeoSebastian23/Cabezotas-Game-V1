@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jqqc2jtxo027"
-path="res://.godot/imported/player01 pateando.png-0e6dfb57b3735f7ef3a0f5225462061d.ctex"
+uid="uid://bewosvkev2342"
+path="res://.godot/imported/fondo neon.png-0d98fd413b53afe00ab69a6850edb07b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/player01 pateando.png"
-dest_files=["res://.godot/imported/player01 pateando.png-0e6dfb57b3735f7ef3a0f5225462061d.ctex"]
+source_file="res://Cabezones/assets/sprites/fondo neon.png"
+dest_files=["res://.godot/imported/fondo neon.png-0d98fd413b53afe00ab69a6850edb07b.ctex"]
 
 [params]
 

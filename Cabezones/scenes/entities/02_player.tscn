@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bc5fq3r4csaxe"]
 
 [ext_resource type="Script" uid="uid://ce72avsont5g7" path="res://Cabezones/scripts/02_player.gd" id="1_eiisu"]
-[ext_resource type="Texture2D" uid="uid://djty6b880nhnt" path="res://Cabezones/assets/sprites/ChatGPT Image 28 ago 2025, 07_50_56 p.m..png" id="2_eiisu"]
+[ext_resource type="Texture2D" uid="uid://djty6b880nhnt" path="res://Cabezones/assets/sprites/personaje02.png" id="2_eiisu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
 size = Vector2(766, 1520)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_eiisu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

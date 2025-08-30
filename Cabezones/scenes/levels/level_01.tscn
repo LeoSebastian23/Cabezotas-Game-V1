@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bk6bn4cywulqm"]
 
-[ext_resource type="PackedScene" uid="uid://dx27twuyh1sbx" path="res://Cabezones/scenes/entities/01_player.tscn" id="1_6k3ui"]
-[ext_resource type="Texture2D" uid="uid://bewosvkev2342" path="res://Cabezones/assets/sprites/Estadio cibernético iluminado por neón.png" id="1_mquwq"]
+[ext_resource type="PackedScene" uid="uid://bjkakoxgcgw83" path="res://Cabezones/scenes/entities/01_player.tscn" id="1_6k3ui"]
+[ext_resource type="Texture2D" uid="uid://bewosvkev2342" path="res://Cabezones/assets/sprites/fondo neon.png" id="1_mquwq"]
 [ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/02_player.tscn" id="3_8w7wo"]
-[ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/ball.tscn" id="4_643p8"]
+[ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/balon.tscn" id="4_643p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_643p8"]
 size = Vector2(80, 648)
@@ -15,12 +15,15 @@ size = Vector2(1151, 200)
 size = Vector2(78, 648)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_643p8"]
-friction = 0.2
+friction = 2.0
+rough = true
 bounce = 0.4
+absorbent = true
 
 [node name="Level01" type="Node2D"]
 
 [node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, -1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
@@ -43,19 +46,13 @@ shape = SubResource("RectangleShape2D_tx8dc")
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_6k3ui")]
 position = Vector2(274, 381)
 scale = Vector2(0.05, 0.05)
-collision_layer = 2
-collision_mask = 5
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_8w7wo")]
 position = Vector2(873, 381)
 scale = Vector2(0.045, 0.045)
-collision_layer = 2
-collision_mask = 5
 
 [node name="ball" parent="." instance=ExtResource("4_643p8")]
 position = Vector2(574, 104)
 scale = Vector2(0.993726, 1.00661)
-collision_layer = 4
-collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_643p8")
 gravity_scale = 0.1

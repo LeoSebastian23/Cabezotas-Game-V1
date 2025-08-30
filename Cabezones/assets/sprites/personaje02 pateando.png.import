@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgbn46ye57k0a"
-path="res://.godot/imported/Atardecer en el estadio de fútbol.png-e68bbaf40d0efe72195540c957a99e43.ctex"
+uid="uid://jqqc2jtxo027"
+path="res://.godot/imported/personaje02 pateando.png-d5fb259a7733c013677e59d4d365c172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/Atardecer en el estadio de fútbol.png"
-dest_files=["res://.godot/imported/Atardecer en el estadio de fútbol.png-e68bbaf40d0efe72195540c957a99e43.ctex"]
+source_file="res://Cabezones/assets/sprites/personaje02 pateando.png"
+dest_files=["res://.godot/imported/personaje02 pateando.png-d5fb259a7733c013677e59d4d365c172.ctex"]
 
 [params]
 
