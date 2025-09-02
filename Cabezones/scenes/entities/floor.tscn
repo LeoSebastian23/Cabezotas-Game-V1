@@ -9,13 +9,14 @@ size = Vector2(125, 25)
 a = Vector2(0, -35)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yudxw"]
-a = Vector2(-58, -54)
-b = Vector2(-57, 4)
+a = Vector2(-55.0928, -86.3384)
+b = Vector2(-55.0928, 38.3726)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_oj3tl")
 
@@ -25,9 +26,10 @@ scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_cgngl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(46, -6)
+position = Vector2(48, -7.33333)
 shape = SubResource("SegmentShape2D_mb258")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(6.66667, 0)
+position = Vector2(4, -0.666667)
+scale = Vector2(1.02857, 0.625446)
 shape = SubResource("SegmentShape2D_yudxw")
