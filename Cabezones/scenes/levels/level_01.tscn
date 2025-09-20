@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk6bn4cywulqm"]
+
+[ext_resource type="PackedScene" uid="uid://ukdhvsasaapu" path="res://Cabezones/scenes/entities/player_01.tscn" id="1_6k3ui"]
+[ext_resource type="Texture2D" uid="uid://bewosvkev2342" path="res://Cabezones/assets/sprites/fondo neon.png" id="1_mquwq"]
+[ext_resource type="Script" uid="uid://cnohg5ie8386y" path="res://Cabezones/scenes/levels/level_01.gd" id="1_r365o"]
+[ext_resource type="PackedScene" uid="uid://pyxt02q50kec" path="res://Cabezones/scenes/entities/ground.tscn" id="1_tx8dc"]
+[ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/player_02.tscn" id="3_8w7wo"]
+[ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/balon.tscn" id="4_643p8"]
+[ext_resource type="PackedScene" uid="uid://bvt2ldsyylhwu" path="res://Cabezones/scenes/entities/arco.tscn" id="4_u1yl1"]
+[ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/players.gd" id="5_tx8dc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_643p8"]
+rough = true
+bounce = 0.6
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_r365o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 325)
+scale = Vector2(0.751302, 0.634766)
+texture = ExtResource("1_mquwq")
+
+[node name="Ground" parent="." instance=ExtResource("1_tx8dc")]
+position = Vector2(0, -1)
+
+[node name="arco" parent="." groups=["ball"] instance=ExtResource("4_u1yl1")]
+
+[node name="Player_01" parent="." instance=ExtResource("1_6k3ui")]
+script = ExtResource("5_tx8dc")
+speed = 300
+jump_force = -400
+gravity = 1200
+move_left_action = "move_left"
+move_right_action = "move_right"
+jump_action = "move_up"
+
+[node name="Player_02" parent="." instance=ExtResource("3_8w7wo")]
+script = ExtResource("5_tx8dc")
+speed = 300
+jump_force = -400
+gravity = 1200
+move_left_action = "move_left"
+move_right_action = "move_right"
+jump_action = "move_up"
+
+[node name="ball" parent="." instance=ExtResource("4_643p8")]
+scale = Vector2(0.993726, 1.00661)
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_643p8")
+max_contacts_reported = 1

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk6bn4cywulqm"]
+
+[ext_resource type="PackedScene" uid="uid://dx27twuyh1sbx" path="res://Cabezones/scenes/entities/01_player.tscn" id="1_6k3ui"]
+[ext_resource type="Texture2D" uid="uid://bewosvkev2342" path="res://Cabezones/assets/sprites/Estadio cibernético iluminado por neón.png" id="1_mquwq"]
+[ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/02_player.tscn" id="3_8w7wo"]
+[ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/ball.tscn" id="4_643p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mquwq"]
+size = Vector2(1151, 109)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_643p8"]
+friction = 0.2
+bounce = 0.4
+
+[node name="Level01" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(576, 324)
+scale = Vector2(0.75, 0.632813)
+texture = ExtResource("1_mquwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(576, 501.5)
+shape = SubResource("RectangleShape2D_mquwq")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_6k3ui")]
+position = Vector2(274, 381)
+scale = Vector2(0.05, 0.05)
+speed = 300
+jump_force = -400.0
+gravity = 1200.0
+kick_force = 800.0
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_8w7wo")]
+position = Vector2(873, 381)
+scale = Vector2(0.045, 0.045)
+
+[node name="ball" parent="." instance=ExtResource("4_643p8")]
+position = Vector2(591, 87)
+scale = Vector2(0.993726, 1.00661)
+physics_material_override = SubResource("PhysicsMaterial_643p8")
+gravity_scale = 0.1

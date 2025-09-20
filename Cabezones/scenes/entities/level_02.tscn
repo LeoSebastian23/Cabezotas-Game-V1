@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs1dw0yykcmh2"]
+
+[ext_resource type="PackedScene" uid="uid://but5rbrr5xeph" path="res://Cabezones/scenes/entities/sunset_background.tscn" id="1_srdbo"]
+[ext_resource type="PackedScene" uid="uid://pyxt02q50kec" path="res://Cabezones/scenes/entities/ground.tscn" id="2_ms2hf"]
+[ext_resource type="PackedScene" uid="uid://ukdhvsasaapu" path="res://Cabezones/scenes/entities/player_01.tscn" id="3_r32vt"]
+[ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/player_02.tscn" id="4_m58qb"]
+[ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/players.gd" id="4_ms2hf"]
+[ext_resource type="PackedScene" uid="uid://bos8gvj0tkvii" path="res://Cabezones/scenes/entities/Ball_.tscn" id="5_ytmeb"]
+
+[node name="Level02" type="Node2D"]
+
+[node name="SunsetBackground" parent="." instance=ExtResource("1_srdbo")]
+
+[node name="Ground" parent="." instance=ExtResource("2_ms2hf")]
+
+[node name="player_01" parent="." instance=ExtResource("3_r32vt")]
+script = ExtResource("4_ms2hf")
+speed = 300
+jump_force = -400
+gravity = 1200
+move_left_action = "move_left"
+move_right_action = "move_right"
+jump_action = "move_up"
+
+[node name="player_02" parent="." instance=ExtResource("4_m58qb")]
+script = ExtResource("4_ms2hf")
+jump_force = -400
+gravity = 1200
+move_left_action = "move_left"
+move_right_action = "move_right"
+jump_action = "move_up"
+
+[node name="ball" parent="." instance=ExtResource("5_ytmeb")]
+position = Vector2(574, 104)
+collision_layer = 0
+collision_mask = 7

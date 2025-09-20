@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://but5rbrr5xeph"]
+
+[ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/fondo tarde.png" id="1_0h631"]
+
+[node name="SunsetBackground" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.5, 324)
+scale = Vector2(0.75, 0.633)
+texture = ExtResource("1_0h631")

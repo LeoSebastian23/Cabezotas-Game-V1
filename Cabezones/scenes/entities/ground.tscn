@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://pyxt02q50kec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8dc"]
+size = Vector2(78, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_643p8"]
+size = Vector2(80, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mquwq"]
+size = Vector2(1151, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45dyi"]
+size = Vector2(1153, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7run"]
+size = Vector2(122, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhxan"]
+size = Vector2(116.5, 4.25)
+
+[node name="Ground" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.75, 0.632813)
+
+[node name="Lateral Derecho" type="CollisionShape2D" parent="."]
+position = Vector2(1113, 324)
+shape = SubResource("RectangleShape2D_tx8dc")
+
+[node name="Lateral Izquierda" type="CollisionShape2D" parent="."]
+position = Vector2(41, 324)
+shape = SubResource("RectangleShape2D_643p8")
+
+[node name="Suelo" type="CollisionShape2D" parent="."]
+position = Vector2(576, 547)
+shape = SubResource("RectangleShape2D_mquwq")
+
+[node name="Techo" type="CollisionShape2D" parent="."]
+position = Vector2(575.5, 0)
+shape = SubResource("RectangleShape2D_45dyi")
+
+[node name="Arco1" type="CollisionShape2D" parent="."]
+position = Vector2(125, 360)
+shape = SubResource("RectangleShape2D_l7run")
+
+[node name="Arco2" type="CollisionShape2D" parent="."]
+position = Vector2(1015.75, 360)
+shape = SubResource("RectangleShape2D_fhxan")
