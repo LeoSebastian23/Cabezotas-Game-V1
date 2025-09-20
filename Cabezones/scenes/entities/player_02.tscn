@@ -4,54 +4,6 @@
 [ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/kickArea.gd" id="2_glxog"]
 
 [sub_resource type="GDScript" id="GDScript_5qo2y"]
-script/source = "extends CharacterBody2D
-
-@export var speed = 300
-@export var jump_force = -400.0
-@export var gravity = 1200.0
-
-var screen_size
-var can_jump = true
-
-func _ready():
-	screen_size = get_viewport_rect().size
-	# Forzar que siempre mire a la izquierda
-	$Sprite2D.flip_h = true
-
-func _physics_process(delta):
-	print(\"DEBUG → gravity:\", gravity, \" type:\", typeof(gravity))
-	print(\"DEBUG → speed:\", speed, \" type:\", typeof(speed))
-	print(\"DEBUG → jump_force:\", jump_force, \" type:\", typeof(jump_force))
-	print(\"DEBUG → delta:\", delta, \" type:\", typeof(delta))
-	# Gravedad
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	else:
-		can_jump = true
-	
-	# Movimiento horizontal
-	var horizontal_input = 0
-	if Input.is_action_pressed(\"p2move_right\"):
-		horizontal_input = 1
-	if Input.is_action_pressed(\"p2move_left\"):
-		horizontal_input = -1
-	
-	velocity.x = horizontal_input * speed
-	
-	# 🔴 Quitamos el cambio de flip dinámico
-	# Siempre fijar a la izquierda
-	$Sprite2D.flip_h = true
-	
-	# Salto
-	if Input.is_action_just_pressed(\"p2move_up\") and can_jump:
-		velocity.y = jump_force
-		can_jump = false
-	
-	move_and_slide()
-	
-	# Mantener en pantalla
-	position = position.clamp(Vector2.ZERO, screen_size)
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
 size = Vector2(766, 1520)
@@ -61,7 +13,8 @@ radius = 21.078
 height = 475.922
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+position = Vector2(873, 381)
+scale = Vector2(0.045, 0.045)
 collision_layer = 2
 collision_mask = 7
 script = SubResource("GDScript_5qo2y")

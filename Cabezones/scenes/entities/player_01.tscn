@@ -61,10 +61,12 @@ radius = 21.078
 height = 475.922
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+position = Vector2(285, 380)
+scale = Vector2(0.05, 0.05)
 collision_layer = 2
 collision_mask = 7
 script = SubResource("GDScript_5qo2y")
+speed = 301
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, 0)

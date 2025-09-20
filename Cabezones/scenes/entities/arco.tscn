@@ -1,24 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvt2ldsyylhwu"]
+[gd_scene load_steps=4 format=3 uid="uid://bvt2ldsyylhwu"]
 
 [ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/fondo tarde.png" id="1_qsluv"]
 
+[sub_resource type="GDScript" id="GDScript_qsluv"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_43bd8"]
+a = Vector2(103, 452)
+b = Vector2(141, 356)
+
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_qsluv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(576, 324)
-scale = Vector2(0.75, 0.632813)
+scale = Vector2(0.75, 0.633)
 texture = ExtResource("1_qsluv")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="arco" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(145, 394)
-polygon = PackedVector2Array(-31, -35, 41, -34, 41, 29, -33, 47, -33, -35)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(16, 71)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(109, 322)
-scale = Vector2(7.73731, -4.59575)
-polygon = PackedVector2Array(8.01312, -6.52778, 8.01312, 7.18056, -1.68017, 7.18056, -1.68017, -10.4444, -2.19715, -10.662, -2.19715, 7.39815, -6.07446, 7.39815, -6.07446, 8.26852, 8.53009, 8.26852, 8.53009, -5.875)
+[node name="score_arco1" type="CollisionShape2D" parent="arco"]
+position = Vector2(6, 1)
+shape = SubResource("SegmentShape2D_43bd8")
