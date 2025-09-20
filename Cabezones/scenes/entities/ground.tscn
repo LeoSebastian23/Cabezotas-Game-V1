@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://fydb6iulvptf"]
+
+[ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/fondo tarde.png" id="1_fhxan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8dc"]
+size = Vector2(78, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_643p8"]
+size = Vector2(80, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mquwq"]
+size = Vector2(1151, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45dyi"]
+size = Vector2(1153, 20)
+
+[node name="Ground" type="StaticBody2D"]
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(0.75, 0.632813)
+texture = ExtResource("1_fhxan")
+
+[node name="Lateral Derecho" type="CollisionShape2D" parent="."]
+position = Vector2(1113, 324)
+shape = SubResource("RectangleShape2D_tx8dc")
+
+[node name="Lateral Izquierda" type="CollisionShape2D" parent="."]
+position = Vector2(41, 324)
+shape = SubResource("RectangleShape2D_643p8")
+
+[node name="Suelo" type="CollisionShape2D" parent="."]
+position = Vector2(576, 547)
+shape = SubResource("RectangleShape2D_mquwq")
+
+[node name="Techo" type="CollisionShape2D" parent="."]
+position = Vector2(575.5, 0)
+shape = SubResource("RectangleShape2D_45dyi")

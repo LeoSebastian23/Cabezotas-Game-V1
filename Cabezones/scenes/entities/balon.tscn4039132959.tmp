@@ -4,22 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bfu7whkpmpi3n" path="res://Cabezones/assets/sprites/balon.png" id="2_m0k4k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_31h7f"]
-friction = 0.1
-rough = true
-bounce = 0.6
-absorbent = true
+bounce = 0.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5oj3w"]
 radius = 64.0
 
 [node name="ball" type="RigidBody2D" groups=["kickable"]]
-collision_layer = 4
+collision_layer = 6
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_31h7f")
 inertia = 1.0
-linear_damp = 0.05
-angular_damp = 0.05
 script = ExtResource("1_n8s22")
+kick_force = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0558174, 0.0546925)
@@ -27,5 +23,6 @@ texture = ExtResource("2_m0k4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["ball"]]
 light_mask = 2
+position = Vector2(2.11758e-22, -2.11758e-22)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_5oj3w")
