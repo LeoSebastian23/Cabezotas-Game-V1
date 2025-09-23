@@ -1,66 +1,55 @@
 extends CharacterBody2D
 
-@export var speed = 300
-@export var jump_force = -400
-@export var gravity = 1200
+@export var speed: float = 200.0
+@export var jump_force: float = -200.0
+@export var gravity: float = 900.0
 
 @export var move_left_action: String = "move_left"
 @export var move_right_action: String = "move_right"
 @export var jump_action: String = "move_up"
 @export var kick_action: String = "kick"
-@export var kick_power: float = 900.0
+
+@export var push_force: float = 2.0        # fuerza con el cuerpo
+@export var kick_power: float = 1200.0     # fuerza de la patada
 @export var kick_duration: float = 0.08
 @export var kick_cooldown: float = 0.25
 
-var _facing := 1
-var _can_kick := true
+@onready var kick_area: Area2D = $KickArea
 
-@onready var kick_area: Node = $KickArea
-var _kick_offset_x := 0.0
+var _can_kick: bool = true
 
-func _ready():
-	if is_instance_valid(kick_area):
-		_kick_offset_x = kick_area.position.x
-	else:
-		print("ERROR -> KickArea no encontrado en $KickArea")
-
-func _physics_process(delta):
-	# gravedad
+func _physics_process(delta: float) -> void:
+	# --- Gravedad ---
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	else:
-		velocity.y = 0
-
-	# movimiento horizontal
-	var input_direction = 0
-	if Input.is_action_pressed(move_left_action):
-		input_direction -= 1
-	if Input.is_action_pressed(move_right_action):
-		input_direction += 1
-
-	if input_direction != 0:
-		_facing = input_direction
-		kick_area.position.x = abs(_kick_offset_x) * _facing
-
-	velocity.x = input_direction * speed
-
-	# salto
-	if Input.is_action_just_pressed(jump_action) and is_on_floor():
+	elif Input.is_action_just_pressed(jump_action):
 		velocity.y = jump_force
 
-	# patear fuerte con tecla
-	if Input.is_action_just_pressed(kick_action) and _can_kick:
-		_do_kick()
+	# --- Movimiento horizontal ---
+	velocity.x = 0
+	if Input.is_action_pressed(move_left_action):
+		velocity.x = -speed
+	if Input.is_action_pressed(move_right_action):
+		velocity.x = speed
 
+	# --- Movimiento con físicas ---
 	move_and_slide()
 
-func _do_kick():
-	_can_kick = false
-	var dir: Vector2 = Vector2(_facing, -0.15).normalized()
-	if kick_area.has_method("start_kick"):
-		kick_area.start_kick(dir, kick_power, kick_duration)
-	_start_kick_cooldown()
+	# --- Empuje con el cuerpo ---
+	for i in range(get_slide_collision_count()):
+		var collision := get_slide_collision(i)
+		if collision and collision.get_collider() is RigidBody2D:
+			var ball := collision.get_collider() as RigidBody2D
+			var dir := (ball.global_position - global_position).normalized()
+			ball.apply_impulse(dir * velocity.length() * push_force)
 
-func _start_kick_cooldown() -> void:
+	# --- Patear ---
+	if Input.is_action_just_pressed(kick_action) and _can_kick:
+		_start_kick()
+
+func _start_kick() -> void:
+	_can_kick = false
+	var dir := Vector2(sign(velocity.x), -0.3).normalized()
+	kick_area.start_kick(dir, kick_power, kick_duration)
 	await get_tree().create_timer(kick_cooldown).timeout
 	_can_kick = true

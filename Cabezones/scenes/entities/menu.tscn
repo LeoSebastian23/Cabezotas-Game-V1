@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://chwcvly1mupco"]
+[gd_scene load_steps=9 format=3 uid="uid://rlqhgco8yupn"]
 
 [ext_resource type="Texture2D" uid="uid://cgl5geuhr42sf" path="res://Cabezones/assets/sprites/Menuback.jpeg" id="1_1qtek"]
-[ext_resource type="Script" uid="uid://dfl62oxs0yplr" path="res://Cabezones/scripts/menu.gd" id="1_icp6f"]
+[ext_resource type="Script" path="res://Cabezones/scripts/menu.gd" id="1_icp6f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qtek"]
 bg_color = Color(0.6, 0.054902, 0.6, 0.333333)
