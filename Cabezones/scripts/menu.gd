@@ -2,11 +2,11 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cabezones/scenes/levels/level_01.tscn")
+	get_tree().change_scene_to_file("res://Cabezones/scenes/entities/seleccionarEscenario.tscn")
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Cabezones/scenes/entities/opciones.tscn")
 
 
 func _on_quit_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://2iert5f8aecd"]
+[gd_scene load_steps=4 format=3 uid="uid://dhwmupcfqppay"]
 
 [ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/fondo tarde.png" id="1_rx7oc"]
 
@@ -14,7 +14,7 @@ b = Vector2(1085, 444)
 script = SubResource("GDScript_rx7oc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(905, 224)
 scale = Vector2(0.75, 0.633)
 texture = ExtResource("1_rx7oc")
 

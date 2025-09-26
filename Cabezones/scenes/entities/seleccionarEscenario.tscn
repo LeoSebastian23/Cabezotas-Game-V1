@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwh5asvfluqgb"]
+
+[ext_resource type="Texture2D" uid="uid://bn72slmck0kfe" path="res://Cabezones/assets/sprites/Seleccionar_escenario.png" id="1_catxc"]
+[ext_resource type="Script" uid="uid://dsld52qk5fqht" path="res://Cabezones/scripts/seleccionar_escenario.gd" id="1_sbka5"]
+[ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="2_du4bu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbka5"]
+bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du4bu"]
+bg_color = Color(0, 0.188235, 0.121569, 0.72549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7maxs"]
+bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm116"]
+bg_color = Color(0, 0.188235, 0.121569, 0.72549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i643h"]
+bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w3wv"]
+bg_color = Color(0, 0.188235, 0.121569, 0.72549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck42k"]
+bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8rwt"]
+bg_color = Color(0, 0.188235, 0.121569, 0.72549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sbka5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_catxc")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -14.0
+offset_right = 216.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="btNormal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_sbka5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_du4bu")
+text = "NORMAL"
+
+[node name="btApocalipsis" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_7maxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nm116")
+text = "APOCALIPSIS"
+
+[node name="btNeon" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_i643h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w3wv")
+text = "NEON"
+
+[node name="btAtardecer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_ck42k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8rwt")
+text = "ATARDECER"
+
+[node name="btMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_ck42k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8rwt")
+text = "VOLVER AL MENU"
+
+[connection signal="pressed" from="VBoxContainer/btNormal" to="." method="_on_bt_normal_pressed"]
+[connection signal="pressed" from="VBoxContainer/btApocalipsis" to="." method="_on_bt_apocalipsis_pressed"]
+[connection signal="pressed" from="VBoxContainer/btNeon" to="." method="_on_bt_neon_pressed"]
+[connection signal="pressed" from="VBoxContainer/btAtardecer" to="." method="_on_bt_atardecer_pressed"]
+[connection signal="pressed" from="VBoxContainer/btMenu" to="." method="_on_bt_menu_pressed"]

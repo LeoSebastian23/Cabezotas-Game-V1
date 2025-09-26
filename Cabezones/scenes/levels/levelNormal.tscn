@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8s3wdjhxyfmf"]
+
+[ext_resource type="Texture2D" uid="uid://b06pvb1b57smk" path="res://Cabezones/assets/sprites/fondo dia.png" id="1_rknpc"]
+[ext_resource type="PackedScene" uid="uid://ukdhvsasaapu" path="res://Cabezones/scenes/entities/player_01.tscn" id="2_72d26"]
+[ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/players.gd" id="3_giuhr"]
+[ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/player_02.tscn" id="4_y5j3e"]
+[ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/balon.tscn" id="5_3ym3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8dc"]
+size = Vector2(78, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_643p8"]
+size = Vector2(80, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mquwq"]
+size = Vector2(1151, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45dyi"]
+size = Vector2(1153, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_643p8"]
+bounce = 0.8
+
+[node name="Level01" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, -1)
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(576, 325)
+scale = Vector2(0.75, 0.632813)
+texture = ExtResource("1_rknpc")
+
+[node name="Lateral Derecho" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1113, 324)
+shape = SubResource("RectangleShape2D_tx8dc")
+
+[node name="Lateral Izquierda" type="CollisionShape2D" parent="Ground"]
+position = Vector2(41, 324)
+shape = SubResource("RectangleShape2D_643p8")
+
+[node name="Suelo" type="CollisionShape2D" parent="Ground"]
+position = Vector2(576, 547)
+shape = SubResource("RectangleShape2D_mquwq")
+
+[node name="Techo" type="CollisionShape2D" parent="Ground"]
+position = Vector2(575.5, 0)
+shape = SubResource("RectangleShape2D_45dyi")
+
+[node name="Player_01" parent="." instance=ExtResource("2_72d26")]
+position = Vector2(285, 380)
+scale = Vector2(0.05, 0.05)
+collision_layer = 6
+slide_on_ceiling = false
+script = ExtResource("3_giuhr")
+speed = 200.0
+jump_force = -200.0
+gravity = 900.0
+move_left_action = "move_left"
+move_right_action = "move_right"
+jump_action = "move_up"
+kick_action = "kick"
+push_force = 2.0
+kick_power = 1200.0
+kick_duration = 0.08
+kick_cooldown = 0.25
+
+[node name="Player_02" parent="." instance=ExtResource("4_y5j3e")]
+position = Vector2(873, 381)
+scale = Vector2(0.045, 0.045)
+collision_layer = 6
+script = ExtResource("3_giuhr")
+speed = 200.0
+jump_force = -200.0
+gravity = 900.0
+move_left_action = "p2move_left"
+move_right_action = "p2move_right"
+jump_action = "p2move_up"
+kick_action = "p2kick"
+push_force = 2.0
+kick_power = 1200.0
+kick_duration = 0.08
+kick_cooldown = 0.25
+
+[node name="ball" parent="." instance=ExtResource("5_3ym3e")]
+position = Vector2(574, 104)
+scale = Vector2(0.993726, 1.00661)
+collision_mask = 15
+physics_material_override = SubResource("PhysicsMaterial_643p8")
+max_contacts_reported = 1
+linear_damp = 0.1
+angular_damp = 0.1
