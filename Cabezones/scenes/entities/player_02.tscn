@@ -57,8 +57,8 @@ func _physics_process(delta):
 size = Vector2(766, 1520)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_av830"]
-radius = 21.078
-height = 475.922
+radius = 14.052
+height = 333.146
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
@@ -81,6 +81,6 @@ collision_mask = 7
 script = ExtResource("2_glxog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
-position = Vector2(-560, 470)
+position = Vector2(-530, 540)
 scale = Vector2(21.3493, -1.26071)
 shape = SubResource("CapsuleShape2D_av830")

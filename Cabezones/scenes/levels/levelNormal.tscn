@@ -55,15 +55,14 @@ collision_layer = 6
 slide_on_ceiling = false
 script = ExtResource("3_giuhr")
 speed = 200.0
-jump_force = -200.0
-gravity = 900.0
+jump_force = -300.0
+gravity = 1000.0
 move_left_action = "move_left"
 move_right_action = "move_right"
 jump_action = "move_up"
 kick_action = "kick"
-push_force = 2.0
+push_force = 1.5
 kick_power = 1200.0
-kick_duration = 0.08
 kick_cooldown = 0.25
 
 [node name="Player_02" parent="." instance=ExtResource("4_y5j3e")]
@@ -72,15 +71,14 @@ scale = Vector2(0.045, 0.045)
 collision_layer = 6
 script = ExtResource("3_giuhr")
 speed = 200.0
-jump_force = -200.0
-gravity = 900.0
+jump_force = -300.0
+gravity = 1000.0
 move_left_action = "p2move_left"
 move_right_action = "p2move_right"
 jump_action = "p2move_up"
 kick_action = "p2kick"
-push_force = 2.0
+push_force = 1.5
 kick_power = 1200.0
-kick_duration = 0.08
 kick_cooldown = 0.25
 
 [node name="ball" parent="." instance=ExtResource("5_3ym3e")]
