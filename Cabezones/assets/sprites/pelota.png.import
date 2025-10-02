@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db7bov8g4cngv"
-path="res://.godot/imported/personaje01.png-346ed33a6539dbe854925f302edd6062.ctex"
+uid="uid://bfu7whkpmpi3n"
+path="res://.godot/imported/pelota.png-857577b7cc327779e0c54ab315e30ae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/personaje01.png"
-dest_files=["res://.godot/imported/personaje01.png-346ed33a6539dbe854925f302edd6062.ctex"]
+source_file="res://Cabezones/assets/sprites/pelota.png"
+dest_files=["res://.godot/imported/pelota.png-857577b7cc327779e0c54ab315e30ae0.ctex"]
 
 [params]
 

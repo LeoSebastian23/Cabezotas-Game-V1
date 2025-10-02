@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://5i2b10ldj2fe"]
 
 [ext_resource type="Script" uid="uid://dmekyj4ip64hb" path="res://Cabezones/scripts/ball.gd" id="1_n8s22"]
-[ext_resource type="Texture2D" uid="uid://bfu7whkpmpi3n" path="res://Cabezones/assets/sprites/balon.png" id="2_m0k4k"]
+[ext_resource type="Texture2D" uid="uid://bfu7whkpmpi3n" path="res://Cabezones/assets/sprites/pelota.png" id="2_m0k4k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_31h7f"]
 friction = 0.1
@@ -14,7 +14,7 @@ radius = 64.0
 
 [node name="ball" type="RigidBody2D" groups=["kickable"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 physics_material_override = SubResource("PhysicsMaterial_31h7f")
 inertia = 1.0
 linear_damp = 0.05

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc5fq3r4csaxe"]
+[gd_scene load_steps=8 format=3 uid="uid://bc5fq3r4csaxe"]
 
-[ext_resource type="Texture2D" uid="uid://djty6b880nhnt" path="res://Cabezones/assets/sprites/personaje02.png" id="2_eiisu"]
-[ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/kickArea.gd" id="2_glxog"]
+[ext_resource type="Texture2D" uid="uid://djty6b880nhnt" path="res://Cabezones/assets/sprites/player02.png" id="2_eiisu"]
+[ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/kick_area.gd" id="2_glxog"]
+[ext_resource type="Texture2D" uid="uid://hgs8i11j50a" path="res://Cabezones/assets/sprites/player02_pateando.png" id="3_nkdt4"]
 
 [sub_resource type="GDScript" id="GDScript_5qo2y"]
 script/source = "extends CharacterBody2D
@@ -54,11 +55,28 @@ func _physics_process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
-size = Vector2(766, 1520)
+size = Vector2(840, 1520)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_av830"]
-radius = 14.052
-height = 333.146
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkdt4"]
+radius = 10.3048
+height = 269.689
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myoqi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eiisu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nkdt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eiisu")
+}],
+"loop": false,
+"name": &"kick",
+"speed": 12.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
@@ -67,12 +85,13 @@ collision_mask = 7
 script = SubResource("GDScript_5qo2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2, 0)
 texture = ExtResource("2_eiisu")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13, -3.33786e-05)
+position = Vector2(10, -3.33786e-05)
 shape = SubResource("RectangleShape2D_f50pn")
 
 [node name="KickArea" type="Area2D" parent="."]
@@ -81,6 +100,13 @@ collision_mask = 7
 script = ExtResource("2_glxog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
-position = Vector2(-530, 540)
-scale = Vector2(21.3493, -1.26071)
-shape = SubResource("CapsuleShape2D_av830")
+position = Vector2(-540, 580)
+scale = Vector2(24.5402, -1.26071)
+shape = SubResource("CapsuleShape2D_nkdt4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_myoqi")
+animation = &"kick"
+frame = 2
+frame_progress = 1.0
+flip_h = true

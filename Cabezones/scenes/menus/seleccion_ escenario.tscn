@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwh5asvfluqgb"]
 
-[ext_resource type="Texture2D" uid="uid://bn72slmck0kfe" path="res://Cabezones/assets/sprites/Seleccionar_escenario.png" id="1_catxc"]
-[ext_resource type="Script" uid="uid://dsld52qk5fqht" path="res://Cabezones/scripts/seleccionar_escenario.gd" id="1_sbka5"]
+[ext_resource type="Texture2D" uid="uid://bn72slmck0kfe" path="res://Cabezones/assets/sprites/seleccion_escenario.png" id="1_catxc"]
+[ext_resource type="Script" uid="uid://dsld52qk5fqht" path="res://Cabezones/scripts/select_level.gd" id="1_sbka5"]
 [ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="2_du4bu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbka5"]

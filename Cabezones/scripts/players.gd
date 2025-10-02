@@ -1,7 +1,7 @@
 # Player.gd (modifica tu código existente)
 extends CharacterBody2D
 
-@export var speed: float = 200.0
+@export var speed: float = 300.0
 @export var jump_force: float = -300.0
 @export var gravity: float = 1000.0
 
@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var kick_cooldown: float = 0.25
 
 @onready var kick_area: Area2D = $KickArea
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var _can_kick: bool = true
 
@@ -51,6 +52,9 @@ func _physics_process(delta: float) -> void:
 
 func _perform_kick() -> void:
 	_can_kick = false
+	
+	# Reproducir animación
+	sprite.play("kick")
 	
 	# Dirección de patada mejorada
 	var kick_direction := _calculate_kick_direction()
