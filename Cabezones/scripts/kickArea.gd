@@ -16,8 +16,3 @@ func kick(direction: Vector2, power: float) -> void:
 
 func _on_kick_success(_ball: RigidBody2D) -> void:
 	print("¡Pelota pateada!")
-	# Aquí puedes agregar efectos, sonidos, etc. en el futuro
-	# Por ejemplo:
-	# - Efecto de partículas
-	# - Sonido de patada
-	# - Animación adicional

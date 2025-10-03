@@ -1,4 +1,3 @@
-# Player.gd (modifica tu código existente)
 extends CharacterBody2D
 
 @export var speed: float = 200.0
@@ -10,8 +9,8 @@ extends CharacterBody2D
 @export var jump_action: String = "move_up"
 @export var kick_action: String = "kick"
 
-@export var push_force: float = 1.5        # fuerza con el cuerpo
-@export var kick_power: float = 1200.0     # fuerza de la patada
+@export var push_force: float = 0.5        # fuerza con el cuerpo (reducida)
+@export var kick_power: float = 600.0     # fuerza de la patada (reducida)
 @export var kick_cooldown: float = 0.25
 
 @onready var kick_area: Area2D = $KickArea
@@ -35,19 +34,37 @@ func _physics_process(delta: float) -> void:
 	# --- Movimiento con físicas ---
 	move_and_slide()
 
-# Ejemplo de modificación en la función de empuje corporal (_physics_process)
+	# --- EMPUJE MEJORADO ---
 	for i in range(get_slide_collision_count()):
 		var collision := get_slide_collision(i)
 		if collision and collision.get_collider() is RigidBody2D:
 			var ball := collision.get_collider() as RigidBody2D
-			# Verificar que la pelota no acaba de ser pateada
-			if not ball.has_meta("recently_kicked"):
-				var dir := (ball.global_position - global_position).normalized()
-				ball.apply_impulse(dir * velocity.length() * push_force)
+			# Verificar que sea realmente una pelota y no otro objeto
+			if ball.is_in_group("ball") and not ball.has_meta("recently_kicked"):
+				_apply_push_force(ball)
 
-	# --- Patear (VERSIÓN MEJORADA) ---
+	# --- Patear ---
 	if Input.is_action_just_pressed(kick_action) and _can_kick:
 		_perform_kick()
+
+func _apply_push_force(ball: RigidBody2D) -> void:
+	# 1. Determinar dirección horizontal basada en la mirada del jugador
+	var push_direction := Vector2.RIGHT
+	if scale.x < 0:  # Si el sprite está volteado a la izquierda
+		push_direction = Vector2.LEFT
+	
+	# 2. Calcular fuerza base (si está quieto, usar fuerza mínima)
+	var horizontal_velocity = velocity.x
+	if abs(horizontal_velocity) < 50:  # Si se mueve muy lento o está quieto
+		horizontal_velocity = 50 * sign(push_direction.x)  # Fuerza mínima en lugar de velocidad máxima
+	
+	# 3. Reducir la fuerza base y aplicar límite máximo
+	var force_strength = abs(horizontal_velocity) * push_force * 0.1  # Multiplicador adicional
+	force_strength = min(force_strength, 100)  # Límite máximo de fuerza
+	
+	# 4. Aplicar el impulso (principalmente horizontal)
+	var force_vector = push_direction * force_strength
+	ball.apply_impulse(force_vector)
 
 func _perform_kick() -> void:
 	_can_kick = false
@@ -72,7 +89,7 @@ func _calculate_kick_direction() -> Vector2:
 		# Si está quieto, usar la escala para determinar dirección
 		base_direction.x = 1 if scale.x > 0 else -1
 	
-	# Componente vertical (hacia arriba)
-	base_direction.y = -0.4  # Ajusta este valor para controlar la altura
+	# Componente vertical (ligeramente hacia arriba)
+	base_direction.y = -0.4
 	
 	return base_direction.normalized()
