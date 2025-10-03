@@ -63,15 +63,8 @@ func _reset_positions() -> void:
 	print("♻️ Reseteando posiciones…")
 
 	# --- Pelota ---
-	if ball:
-		ball.linear_velocity = Vector2.ZERO
-		ball.angular_velocity = 0.0
-		ball.sleeping = true  # pausa el rigidbody un momento
-		ball.call_deferred("set_global_position", ball_start_pos)
-
-		# despertar después de moverla
-		await get_tree().process_frame
-		ball.sleeping = false
+	if ball and ball.has_method("teleport"):
+		ball.teleport(ball_start_pos)
 
 	# --- Jugadores ---
 	if player1:
