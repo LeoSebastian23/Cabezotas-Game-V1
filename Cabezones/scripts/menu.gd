@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cabezones/scenes/entities/seleccionarEscenario.tscn")
+	get_tree().change_scene_to_file("res://Cabezones/scenes/menus/seleccion_ escenario.tscn")
 
 
 func _on_options_pressed() -> void:

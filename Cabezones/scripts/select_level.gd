@@ -19,4 +19,4 @@ func _on_bt_atardecer_pressed() -> void:
 
 
 func _on_bt_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cabezones/scenes/entities/menu.tscn")
+	get_tree().change_scene_to_file("res://Cabezones/scenes/menus/opciones.tscn")

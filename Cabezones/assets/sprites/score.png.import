@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgl5geuhr42sf"
-path="res://.godot/imported/Menuback.jpeg-71e523b0a3f8b094eb47694db5cc331f.ctex"
+uid="uid://dvldwar620kay"
+path="res://.godot/imported/score.png-a79240cc534d534635bd31eb8696a16b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/Menuback.jpeg"
-dest_files=["res://.godot/imported/Menuback.jpeg-71e523b0a3f8b094eb47694db5cc331f.ctex"]
+source_file="res://Cabezones/assets/sprites/score.png"
+dest_files=["res://.godot/imported/score.png-a79240cc534d534635bd31eb8696a16b.ctex"]
 
 [params]
 

@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://rmmtawl0jp0v"]
+
+[ext_resource type="Script" uid="uid://c0nnhrcl0f0rq" path="res://Cabezones/scripts/ScoreUI.gd" id="1_6a8f5"]
+[ext_resource type="Texture2D" uid="uid://dvldwar620kay" path="res://Cabezones/assets/sprites/score.png" id="1_dfur8"]
+[ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="3_jvt72"]
+
+[sub_resource type="Theme" id="Theme_m4gsl"]
+
+[node name="ScoreUi" type="CanvasLayer"]
+script = ExtResource("1_6a8f5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_left = 411.0
+offset_top = 1.0
+offset_right = 415.0
+offset_bottom = 0.94397
+scale = Vector2(0.280716, 0.280716)
+theme = SubResource("Theme_m4gsl")
+texture = ExtResource("1_dfur8")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="LabelScoreAzul" type="Label" parent="."]
+offset_left = 515.0
+offset_top = 86.0
+offset_right = 555.0
+offset_bottom = 109.0
+scale = Vector2(1.25436, 1.74316)
+theme_override_colors/font_color = Color(0.823529, 0.121569, 0.0784314, 1)
+theme_override_fonts/font = ExtResource("3_jvt72")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelScoreRojo" type="Label" parent="."]
+offset_left = 582.0
+offset_top = 86.0
+offset_right = 622.0
+offset_bottom = 109.0
+scale = Vector2(1.27695, 1.73334)
+theme_override_colors/font_color = Color(0.823529, 0.121569, 0.0784314, 1)
+theme_override_fonts/font = ExtResource("3_jvt72")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

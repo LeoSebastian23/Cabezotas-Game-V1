@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ukdhvsasaapu"]
+[gd_scene load_steps=8 format=3 uid="uid://ukdhvsasaapu"]
 
-[ext_resource type="Texture2D" uid="uid://db7bov8g4cngv" path="res://Cabezones/assets/sprites/personaje01.png" id="1_25qc2"]
-[ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/kickArea.gd" id="2_b4p2v"]
+[ext_resource type="Texture2D" uid="uid://db7bov8g4cngv" path="res://Cabezones/assets/sprites/player01.png" id="1_25qc2"]
+[ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/kick_area.gd" id="2_b4p2v"]
+[ext_resource type="Texture2D" uid="uid://jqqc2jtxo027" path="res://Cabezones/assets/sprites/player01_pateando.png" id="3_5hy0j"]
 
 [sub_resource type="GDScript" id="GDScript_5qo2y"]
 
@@ -12,6 +13,28 @@ size = Vector2(766, 1370)
 radius = 10.3048
 height = 222.097
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwi85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_25qc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5hy0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_25qc2")
+}],
+"loop": false,
+"name": &"kick",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
 collision_layer = 2
@@ -19,6 +42,7 @@ collision_mask = 7
 script = SubResource("GDScript_5qo2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2, 0)
 texture = ExtResource("1_25qc2")
 
@@ -35,3 +59,9 @@ script = ExtResource("2_b4p2v")
 position = Vector2(490, 550)
 scale = Vector2(21.3493, -1.26071)
 shape = SubResource("CapsuleShape2D_5hy0j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cwi85")
+animation = &"kick"
+frame = 2
+frame_progress = 1.0

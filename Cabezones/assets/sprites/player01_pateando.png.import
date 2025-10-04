@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djty6b880nhnt"
-path="res://.godot/imported/personaje02.png-014e85db9b2890f1551abdd827d8da6a.ctex"
+uid="uid://jqqc2jtxo027"
+path="res://.godot/imported/player01_pateando.png-e4a9b3193447e70cb65a20aa04ffc774.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/personaje02.png"
-dest_files=["res://.godot/imported/personaje02.png-014e85db9b2890f1551abdd827d8da6a.ctex"]
+source_file="res://Cabezones/assets/sprites/player01_pateando.png"
+dest_files=["res://.godot/imported/player01_pateando.png-e4a9b3193447e70cb65a20aa04ffc774.ctex"]
 
 [params]
 

@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk6bn4cywulqm"]
+[gd_scene load_steps=14 format=3 uid="uid://bk6bn4cywulqm"]
 
 [ext_resource type="PackedScene" uid="uid://ukdhvsasaapu" path="res://Cabezones/scenes/entities/player_01.tscn" id="1_6k3ui"]
 [ext_resource type="Texture2D" uid="uid://bewosvkev2342" path="res://Cabezones/assets/sprites/fondo neon.png" id="1_mquwq"]
+[ext_resource type="Script" uid="uid://r4ml31ggsqpf" path="res://Cabezones/scripts/GameManager.gd" id="1_r365o"]
 [ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/player_02.tscn" id="3_8w7wo"]
 [ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/balon.tscn" id="4_643p8"]
 [ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/players.gd" id="5_tx8dc"]
+[ext_resource type="PackedScene" uid="uid://bysaaculd6x34" path="res://Cabezones/scenes/entities/arco.tscn" id="6_45dyi"]
+[ext_resource type="PackedScene" uid="uid://rmmtawl0jp0v" path="res://Cabezones/scenes/entities/ScoreUI.tscn" id="8_u1yl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8dc"]
 size = Vector2(78, 648)
@@ -16,7 +19,7 @@ size = Vector2(80, 648)
 size = Vector2(1151, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45dyi"]
-size = Vector2(1153, 20)
+size = Vector2(1153, 81)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_643p8"]
 bounce = 0.8
@@ -45,16 +48,17 @@ position = Vector2(576, 547)
 shape = SubResource("RectangleShape2D_mquwq")
 
 [node name="Techo" type="CollisionShape2D" parent="Ground"]
-position = Vector2(575.5, 0)
+position = Vector2(575.5, -30.5)
 shape = SubResource("RectangleShape2D_45dyi")
 
 [node name="Player_01" parent="." instance=ExtResource("1_6k3ui")]
 position = Vector2(285, 380)
 scale = Vector2(0.05, 0.05)
 collision_layer = 6
+collision_mask = 15
 slide_on_ceiling = false
 script = ExtResource("5_tx8dc")
-speed = 200.0
+speed = 300.0
 jump_force = -300.0
 gravity = 1000.0
 move_left_action = "move_left"
@@ -69,8 +73,9 @@ kick_cooldown = 0.25
 position = Vector2(873, 381)
 scale = Vector2(0.045, 0.045)
 collision_layer = 6
+collision_mask = 15
 script = ExtResource("5_tx8dc")
-speed = 200.0
+speed = 300.0
 jump_force = -300.0
 gravity = 1000.0
 move_left_action = "p2move_left"
@@ -89,3 +94,23 @@ physics_material_override = SubResource("PhysicsMaterial_643p8")
 max_contacts_reported = 1
 linear_damp = 0.1
 angular_damp = 0.1
+
+[node name="GoalLeft" parent="." instance=ExtResource("6_45dyi")]
+position = Vector2(34, 20)
+
+[node name="GoalRight" parent="." instance=ExtResource("6_45dyi")]
+position = Vector2(1118, 21)
+rotation = 3.14159
+scale = Vector2(1, -1)
+goal_side = 1
+
+[node name="ScoreUI" parent="." instance=ExtResource("8_u1yl1")]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_r365o")
+goal_left_path = NodePath("../GoalLeft")
+goal_right_path = NodePath("../GoalRight")
+score_ui_path = NodePath("../ScoreUI")
+ball_path = NodePath("../ball")
+player1_path = NodePath("../Player_01")
+player2_path = NodePath("../Player_02")
