@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bk6bn4cywulqm"]
+[gd_scene load_steps=15 format=3 uid="uid://bk6bn4cywulqm"]
 
 [ext_resource type="PackedScene" uid="uid://ukdhvsasaapu" path="res://Cabezones/scenes/entities/player_01.tscn" id="1_6k3ui"]
 [ext_resource type="Texture2D" uid="uid://bewosvkev2342" path="res://Cabezones/assets/sprites/fondo neon.png" id="1_mquwq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/players.gd" id="5_tx8dc"]
 [ext_resource type="PackedScene" uid="uid://bysaaculd6x34" path="res://Cabezones/scenes/entities/arco.tscn" id="6_45dyi"]
 [ext_resource type="PackedScene" uid="uid://rmmtawl0jp0v" path="res://Cabezones/scenes/entities/ScoreUI.tscn" id="8_u1yl1"]
+[ext_resource type="Script" uid="uid://b8j7puv651dkq" path="res://Cabezones/scenes/levels/GameTimer.gd" id="9_owml4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8dc"]
 size = Vector2(78, 648)
@@ -114,3 +115,6 @@ score_ui_path = NodePath("../ScoreUI")
 ball_path = NodePath("../ball")
 player1_path = NodePath("../Player_01")
 player2_path = NodePath("../Player_02")
+
+[node name="GameTimer" type="Node" parent="."]
+script = ExtResource("9_owml4")

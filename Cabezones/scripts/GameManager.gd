@@ -26,6 +26,10 @@ var ball_start_pos: Vector2
 var player1_start_pos: Vector2
 var player2_start_pos: Vector2
 
+# Cronómetro
+@export var match_time_sec: int = 30  # duración total del partido en segundos
+var time_left: int
+var timer: Timer
 
 func _ready() -> void:
 	print("✅ GameManager listo. Path actual:", get_path())
@@ -45,6 +49,18 @@ func _ready() -> void:
 		player1_start_pos = player1.global_position
 	if player2:
 		player2_start_pos = player2.global_position
+
+	# Inicializar cronómetro
+	time_left = match_time_sec
+	timer = Timer.new()
+	timer.wait_time = 1.0
+	timer.one_shot = false
+	add_child(timer)
+	timer.timeout.connect(_on_timer_tick)
+	timer.start()
+
+	if score_ui:
+		score_ui.set_time(time_left)
 
 
 func _on_goal_scored(side_scored_for: StringName) -> void:
@@ -80,3 +96,20 @@ func _reset_positions() -> void:
 
 	if ball:
 		ball.apply_impulse(Vector2(randf_range(-1, 1), -0.2).normalized() * 200)
+
+
+func _on_timer_tick() -> void:
+	time_left -= 1
+	if score_ui:
+		score_ui.set_time(time_left)
+
+	if time_left <= 0:
+		_end_match()
+
+
+func _end_match() -> void:
+	timer.stop()
+	print("🏁 ¡Fin del partido!")
+	if score_ui:
+		score_ui.show_winner(score_p1, score_p2)
+	get_tree().paused = true
