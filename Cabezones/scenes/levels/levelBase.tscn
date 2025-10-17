@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://r4ml31ggsqpf" path="res://Cabezones/scripts/GameManager.gd" id="1_r365o"]
 [ext_resource type="PackedScene" uid="uid://bc5fq3r4csaxe" path="res://Cabezones/scenes/entities/player_02.tscn" id="3_8w7wo"]
 [ext_resource type="PackedScene" uid="uid://5i2b10ldj2fe" path="res://Cabezones/scenes/entities/balon.tscn" id="4_643p8"]
-[ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/players.gd" id="5_tx8dc"]
+[ext_resource type="Script" uid="uid://c0v1nklkh8qs6" path="res://Cabezones/scripts/Players.gd" id="5_tx8dc"]
 [ext_resource type="PackedScene" uid="uid://bysaaculd6x34" path="res://Cabezones/scenes/entities/arco.tscn" id="6_45dyi"]
 [ext_resource type="PackedScene" uid="uid://rmmtawl0jp0v" path="res://Cabezones/scenes/entities/ScoreUI.tscn" id="8_u1yl1"]
-[ext_resource type="Script" uid="uid://b8j7puv651dkq" path="res://Cabezones/scenes/levels/GameTimer.gd" id="9_owml4"]
+[ext_resource type="Script" uid="uid://b8j7puv651dkq" path="res://Cabezones/scripts/GameTimer.gd" id="9_owml4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8dc"]
 size = Vector2(78, 648)
@@ -69,6 +69,7 @@ kick_action = "kick"
 push_force = 1.5
 kick_power = 1200.0
 kick_cooldown = 0.25
+start_facing_right = true
 
 [node name="Player_02" parent="." instance=ExtResource("3_8w7wo")]
 position = Vector2(873, 381)
@@ -86,6 +87,7 @@ kick_action = "p2kick"
 push_force = 1.5
 kick_power = 1200.0
 kick_cooldown = 0.25
+start_facing_right = false
 
 [node name="ball" parent="." instance=ExtResource("4_643p8")]
 position = Vector2(574, 104)
@@ -109,12 +111,6 @@ goal_side = 1
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_r365o")
-goal_left_path = NodePath("../GoalLeft")
-goal_right_path = NodePath("../GoalRight")
-score_ui_path = NodePath("../ScoreUI")
-ball_path = NodePath("../ball")
-player1_path = NodePath("../Player_01")
-player2_path = NodePath("../Player_02")
 
 [node name="GameTimer" type="Node" parent="."]
 script = ExtResource("9_owml4")

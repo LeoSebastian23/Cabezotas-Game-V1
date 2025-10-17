@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwh5asvfluqgb"]
 
 [ext_resource type="Texture2D" uid="uid://bn72slmck0kfe" path="res://Cabezones/assets/sprites/seleccion_escenario.png" id="1_catxc"]
-[ext_resource type="Script" uid="uid://dsld52qk5fqht" path="res://Cabezones/scripts/select_level.gd" id="1_sbka5"]
+[ext_resource type="Script" uid="uid://dsld52qk5fqht" path="res://Cabezones/scripts/SelectLevel.gd" id="1_sbka5"]
 [ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="2_du4bu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbka5"]
@@ -65,6 +65,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sbka5")
@@ -105,7 +107,8 @@ theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_sbka5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_du4bu")
-text = "NORMAL"
+text = "Nivel Base
+"
 
 [node name="btApocalipsis" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -116,7 +119,8 @@ theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_7maxs")
 theme_override_styles/normal = SubResource("StyleBoxFlat_nm116")
-text = "APOCALIPSIS"
+text = "Nivel Atardecer
+"
 
 [node name="btNeon" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -127,7 +131,8 @@ theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_i643h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7w3wv")
-text = "NEON"
+text = "Nivel Dia
+"
 
 [node name="btAtardecer" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -138,7 +143,8 @@ theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_ck42k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t8rwt")
-text = "ATARDECER"
+text = "Nivel Final
+"
 
 [node name="btMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -149,7 +155,8 @@ theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_ck42k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t8rwt")
-text = "VOLVER AL MENU"
+text = "Volver al Menu
+"
 
 [connection signal="pressed" from="VBoxContainer/btNormal" to="." method="_on_bt_normal_pressed"]
 [connection signal="pressed" from="VBoxContainer/btApocalipsis" to="." method="_on_bt_apocalipsis_pressed"]

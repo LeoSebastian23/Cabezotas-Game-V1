@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj2uts2sm26e2"]
+
+[ext_resource type="PackedScene" uid="uid://bk6bn4cywulqm" path="res://Cabezones/scenes/levels/levelBase.tscn" id="1_4ajhm"]
+[ext_resource type="Texture2D" uid="uid://cgbn46ye57k0a" path="res://Cabezones/assets/sprites/fondo tarde.png" id="2_fqv4d"]
+
+[node name="Level01" instance=ExtResource("1_4ajhm")]
+
+[node name="Sprite2D" parent="Ground" index="0"]
+texture = ExtResource("2_fqv4d")
+
+[node name="ScoreUI" parent="." index="6"]
+unique_name_in_owner = true
+
+[node name="GameManager" parent="." index="7"]
+goal_left_path = NodePath("")
+goal_right_path = NodePath("")
+score_ui_path = NodePath("")
+ball_path = NodePath("")
+player1_path = NodePath("")
+player2_path = NodePath("")

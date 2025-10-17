@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://rlqhgco8yupn"]
+[gd_scene load_steps=8 format=3 uid="uid://rlqhgco8yupn"]
 
 [ext_resource type="Texture2D" uid="uid://cgl5geuhr42sf" path="res://Cabezones/assets/sprites/menu.jpeg" id="1_1qtek"]
-[ext_resource type="Script" uid="uid://dfl62oxs0yplr" path="res://Cabezones/scripts/menu.gd" id="1_icp6f"]
+[ext_resource type="Script" uid="uid://dfl62oxs0yplr" path="res://Cabezones/scripts/Menu.gd" id="1_icp6f"]
 [ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="3_se53k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qtek"]
@@ -13,20 +13,6 @@ corner_radius_bottom_left = 15
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icp6f"]
-bg_color = Color(0, 0.188235, 0.121569, 0.72549)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se53k"]
-bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyvjq"]
 bg_color = Color(0, 0.188235, 0.121569, 0.72549)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -101,17 +87,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1qtek")
 theme_override_styles/normal = SubResource("StyleBoxFlat_icp6f")
 text = "JUGAR"
 
-[node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
-theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
-theme_override_fonts/font = ExtResource("3_se53k")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_se53k")
-theme_override_styles/normal = SubResource("StyleBoxFlat_eyvjq")
-text = "OPCIONES"
-
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -124,5 +99,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_s5gs3")
 text = "SALIR"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

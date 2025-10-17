@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bysaaculd6x34"]
 
-[ext_resource type="Script" uid="uid://bjjx2ppv416vn" path="res://Cabezones/scripts/goal.gd" id="1_0v2ly"]
+[ext_resource type="Script" uid="uid://bjjx2ppv416vn" path="res://Cabezones/scripts/Goal.gd" id="1_0v2ly"]
 [ext_resource type="Texture2D" uid="uid://b06pvb1b57smk" path="res://Cabezones/assets/sprites/fondo dia.png" id="1_vjna0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v2ly"]
-size = Vector2(155, 10)
+size = Vector2(155, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kiqrk"]
 size = Vector2(10, 80)
@@ -24,7 +24,7 @@ collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Travesaño"]
-position = Vector2(38.5, 5)
+position = Vector2(41, 5.5)
 shape = SubResource("RectangleShape2D_0v2ly")
 
 [node name="PaloTrasero" type="StaticBody2D" parent="."]
@@ -41,4 +41,4 @@ collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GoalLine"]
-polygon = PackedVector2Array(-24, -71, -133, -71, -133, -71, -133, -71, -172, 10, -97, 11, -24, -7, -24, -71, -98, -71, -98, -71, -98, -71)
+polygon = PackedVector2Array(-37, -71, -135, -67, -135, -67, -135, -67, -172, 10, -97, 11, -37, -5, -37, -71, -135, -67, -135, -67, -135, -67)

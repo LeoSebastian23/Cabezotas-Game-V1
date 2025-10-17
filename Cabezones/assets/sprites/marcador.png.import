@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvldwar620kay"
-path="res://.godot/imported/score.png-a79240cc534d534635bd31eb8696a16b.ctex"
+uid="uid://c6mvy2ydxfxj7"
+path="res://.godot/imported/marcador.png-bd4ee2815cfd76eabef43890f287f998.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cabezones/assets/sprites/score.png"
-dest_files=["res://.godot/imported/score.png-a79240cc534d534635bd31eb8696a16b.ctex"]
+source_file="res://Cabezones/assets/sprites/marcador.png"
+dest_files=["res://.godot/imported/marcador.png-bd4ee2815cfd76eabef43890f287f998.ctex"]
 
 [params]
 

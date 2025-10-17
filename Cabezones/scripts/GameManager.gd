@@ -27,11 +27,12 @@ var player1_start_pos: Vector2
 var player2_start_pos: Vector2
 
 # Cronómetro
-@export var match_time_sec: int = 30  # duración total del partido en segundos
+@export var match_time_sec: int = 60 # duración total del partido en segundos
 var time_left: int
 var timer: Timer
 
 func _ready() -> void:
+	MusicManager.play("match")
 	print("✅ GameManager listo. Path actual:", get_path())
 
 	if goal_left:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://676s2sr1o2kw"]
 
-[ext_resource type="Script" uid="uid://b77xc741g8yje" path="res://Cabezones/scripts/options.gd" id="1_158ib"]
+[ext_resource type="Script" uid="uid://b77xc741g8yje" path="res://Cabezones/scripts/Options.gd" id="1_158ib"]
 [ext_resource type="Texture2D" uid="uid://qy8x4308g6tm" path="res://Cabezones/assets/sprites/opciones.png" id="2_widst"]
 [ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="3_174pa"]
 

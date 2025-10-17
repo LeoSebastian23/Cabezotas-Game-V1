@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://5i2b10ldj2fe"]
 
-[ext_resource type="Script" uid="uid://dmekyj4ip64hb" path="res://Cabezones/scripts/ball.gd" id="1_n8s22"]
+[ext_resource type="Script" uid="uid://dmekyj4ip64hb" path="res://Cabezones/scripts/Ball.gd" id="1_n8s22"]
 [ext_resource type="Texture2D" uid="uid://bfu7whkpmpi3n" path="res://Cabezones/assets/sprites/pelota.png" id="2_m0k4k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_31h7f"]
