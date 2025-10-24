@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name Ball
 
 @export var kickable_group: String = "kickable"
+var strategia
 
 var _teleport_to: Vector2 = Vector2.INF
 

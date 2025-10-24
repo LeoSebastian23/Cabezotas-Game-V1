@@ -12,9 +12,4 @@ texture = ExtResource("2_fqv4d")
 unique_name_in_owner = true
 
 [node name="GameManager" parent="." index="7"]
-goal_left_path = NodePath("")
-goal_right_path = NodePath("")
-score_ui_path = NodePath("")
-ball_path = NodePath("")
-player1_path = NodePath("")
-player2_path = NodePath("")
+match_time_sec = 20

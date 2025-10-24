@@ -3,7 +3,7 @@ extends CanvasLayer
 
 @onready var label_azul: Label = $LabelScoreAzul
 @onready var label_rojo: Label = $LabelScoreRojo
-@onready var label_timer: Label = $LabelTimer  # 👈 Añadido
+@onready var label_timer: Label = $LabelTimer  
 @onready var label_winner: Label = $LabelWinner
 @onready var button_back: Button = $ButtonBackToMenu
 
@@ -18,6 +18,9 @@ func _ready() -> void:
 		button_back.visible = false
 	if label_timer:
 		label_timer.text = "00:00"
+	if button_back:
+		button_back.visible = true  
+		button_back.pressed.connect(_on_button_back_to_menu_pressed)
 
 func set_scores(azul: int, rojo: int) -> void:
 	score_azul = azul
@@ -50,3 +53,8 @@ func show_winner(score_p1: int, score_p2: int) -> void:
 	label_winner.visible = true
 	if button_back:
 		button_back.visible = true
+		
+# === Volver a seleccionar nivel ===")
+func _on_button_back_to_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Cabezones/scenes/menus/seleccion_ escenario.tscn")

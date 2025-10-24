@@ -1,10 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://rmmtawl0jp0v"]
+[gd_scene load_steps=8 format=3 uid="uid://rmmtawl0jp0v"]
 
 [ext_resource type="Script" uid="uid://c0nnhrcl0f0rq" path="res://Cabezones/scripts/ScoreUI.gd" id="1_6a8f5"]
 [ext_resource type="Texture2D" uid="uid://c6mvy2ydxfxj7" path="res://Cabezones/assets/sprites/marcador.png" id="2_jvt72"]
 [ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="3_jvt72"]
 
 [sub_resource type="Theme" id="Theme_m4gsl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0icl"]
+bg_color = Color(0, 0.188235, 0.121569, 0.72549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvt72"]
+bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4gsl"]
+bg_color = Color(0, 0.188235, 0.121569, 0.72549)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="ScoreUi" type="CanvasLayer"]
 script = ExtResource("1_6a8f5")
@@ -29,7 +50,7 @@ offset_top = 97.0
 offset_right = 551.0
 offset_bottom = 125.0
 scale = Vector2(1.25436, 1.74316)
-theme_override_colors/font_color = Color(0.823529, 0.121569, 0.0784314, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
 theme_override_fonts/font = ExtResource("3_jvt72")
 theme_override_font_sizes/font_size = 20
 text = "0"
@@ -42,7 +63,7 @@ offset_top = 97.0
 offset_right = 646.0
 offset_bottom = 125.0
 scale = Vector2(1.27695, 1.73334)
-theme_override_colors/font_color = Color(0.823529, 0.121569, 0.0784314, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
 theme_override_fonts/font = ExtResource("3_jvt72")
 theme_override_font_sizes/font_size = 20
 text = "0"
@@ -55,7 +76,21 @@ offset_top = 170.0
 offset_right = 555.0
 offset_bottom = 195.0
 scale = Vector2(2.9065, 1.61274)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvt72")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTimer2" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 170.0
+offset_right = 555.0
+offset_bottom = 195.0
+scale = Vector2(2.9065, 1.61274)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_jvt72")
@@ -64,11 +99,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelWinner" type="Label" parent="."]
-offset_left = 501.0
+offset_left = 312.0
 offset_top = 235.0
-offset_right = 649.0
+offset_right = 861.0
 offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0icl")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="ButtonBackToMenu" type="Button" parent="."]
+offset_left = 909.0
+offset_top = 6.0
+offset_right = 1144.0
+offset_bottom = 52.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("3_jvt72")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_jvt72")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4gsl")
+text = "Volver al Menu"
+
+[connection signal="pressed" from="ButtonBackToMenu" to="." method="_on_button_back_to_menu_pressed"]
