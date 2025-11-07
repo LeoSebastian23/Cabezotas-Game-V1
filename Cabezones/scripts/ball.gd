@@ -7,8 +7,7 @@ var strategia
 var _teleport_to: Vector2 = Vector2.INF
 
 func _ready() -> void:
-	if not is_in_group(kickable_group):
-		add_to_group(kickable_group)
+	add_to_group(kickable_group)
 
 func teleport(pos: Vector2) -> void:
 	_teleport_to = pos

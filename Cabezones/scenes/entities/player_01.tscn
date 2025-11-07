@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ukdhvsasaapu"]
+[gd_scene load_steps=10 format=3 uid="uid://ukdhvsasaapu"]
 
 [ext_resource type="Texture2D" uid="uid://db7bov8g4cngv" path="res://Cabezones/assets/sprites/player01.png" id="1_25qc2"]
 [ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/KickArea.gd" id="2_b4p2v"]
 [ext_resource type="Texture2D" uid="uid://jqqc2jtxo027" path="res://Cabezones/assets/sprites/player01_pateando.png" id="3_5hy0j"]
+[ext_resource type="Script" uid="uid://cefjti48upkc7" path="res://Cabezones/scripts/strategies/NormalKickStrategy.gd" id="3_cwi85"]
 
 [sub_resource type="GDScript" id="GDScript_5qo2y"]
 script/source = "extends CharacterBody2D
@@ -57,6 +58,10 @@ func _physics_process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
 size = Vector2(766, 1370)
 
+[sub_resource type="Resource" id="Resource_4qtt7"]
+script = ExtResource("3_cwi85")
+metadata/_custom_type_script = "uid://cefjti48upkc7"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hy0j"]
 radius = 13.5836
 height = 349.01
@@ -102,6 +107,7 @@ shape = SubResource("RectangleShape2D_f50pn")
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("2_b4p2v")
+kick_strategy = SubResource("Resource_4qtt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
 position = Vector2(510, 490)

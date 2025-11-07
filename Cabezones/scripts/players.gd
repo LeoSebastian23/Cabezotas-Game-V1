@@ -56,8 +56,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(kick_action) and _can_kick:
 		_perform_kick()
 
-
 func _perform_kick() -> void:
+	_can_kick = false
+	if sprite:
+		sprite.play("kick")
+
+	var kick_direction := _calculate_kick_direction()
+
+	if kick_area:
+		kick_area.kick(kick_direction, kick_power)
+
+	await get_tree().create_timer(kick_cooldown).timeout
+	_can_kick = true
+
+""""func _perform_kick() -> void:
 	_can_kick = false
 	
 	# Reproducir animación
@@ -74,7 +86,7 @@ func _perform_kick() -> void:
 	# Cooldown
 	await get_tree().create_timer(kick_cooldown).timeout
 	_can_kick = true
-
+"""
 
 func _calculate_kick_direction() -> Vector2:
 	var dir_x := 1 if facing_right else -1   # derecha o izquierda fijo

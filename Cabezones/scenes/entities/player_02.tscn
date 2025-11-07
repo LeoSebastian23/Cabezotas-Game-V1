@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bc5fq3r4csaxe"]
+[gd_scene load_steps=10 format=3 uid="uid://bc5fq3r4csaxe"]
 
 [ext_resource type="Texture2D" uid="uid://djty6b880nhnt" path="res://Cabezones/assets/sprites/player02.png" id="2_eiisu"]
 [ext_resource type="Script" uid="uid://cusix5mg7bvf4" path="res://Cabezones/scripts/KickArea.gd" id="2_glxog"]
+[ext_resource type="Script" uid="uid://cefjti48upkc7" path="res://Cabezones/scripts/strategies/NormalKickStrategy.gd" id="3_myoqi"]
 [ext_resource type="Texture2D" uid="uid://hgs8i11j50a" path="res://Cabezones/assets/sprites/player02_pateando.png" id="3_nkdt4"]
 
 [sub_resource type="GDScript" id="GDScript_5qo2y"]
@@ -20,16 +21,12 @@ func _ready():
 	$Sprite2D.flip_h = true
 
 func _physics_process(delta):
-	print(\"DEBUG → gravity:\", gravity, \" type:\", typeof(gravity))
-	print(\"DEBUG → speed:\", speed, \" type:\", typeof(speed))
-	print(\"DEBUG → jump_force:\", jump_force, \" type:\", typeof(jump_force))
-	print(\"DEBUG → delta:\", delta, \" type:\", typeof(delta))
+	debugPrint(delta)
 	# Gravedad
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
-		can_jump = true
-	
+		can_jump = true	
 	# Movimiento horizontal
 	var horizontal_input = 0
 	if Input.is_action_pressed(\"p2move_right\"):
@@ -44,18 +41,30 @@ func _physics_process(delta):
 	$Sprite2D.flip_h = true
 	
 	# Salto
-	if Input.is_action_just_pressed(\"p2move_up\") and can_jump:
-		velocity.y = jump_force
-		can_jump = false
-	
+	jump()	
 	move_and_slide()
 	
 	# Mantener en pantalla
 	position = position.clamp(Vector2.ZERO, screen_size)
+
+func jump() -> void:
+	if Input.is_action_just_pressed(\"p2move_up\") and can_jump:
+			velocity.y = jump_force
+			can_jump = false
+			
+func debugPrint(delta) -> void:
+	print(\"DEBUG → gravity:\", gravity, \" type:\", typeof(gravity))
+	print(\"DEBUG → speed:\", speed, \" type:\", typeof(speed))
+	print(\"DEBUG → jump_force:\", jump_force, \" type:\", typeof(jump_force))
+	print(\"DEBUG → delta:\", delta, \" type:\", typeof(delta))
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
 size = Vector2(840, 1520)
+
+[sub_resource type="Resource" id="Resource_cq4gi"]
+script = ExtResource("3_myoqi")
+metadata/_custom_type_script = "uid://cefjti48upkc7"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkdt4"]
 radius = 12.2248
@@ -98,6 +107,7 @@ shape = SubResource("RectangleShape2D_f50pn")
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("2_glxog")
+kick_strategy = SubResource("Resource_cq4gi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
 position = Vector2(-620, 510)

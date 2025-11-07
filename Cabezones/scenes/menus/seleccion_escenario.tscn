@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://dsld52qk5fqht" path="res://Cabezones/scripts/SelectLevel.gd" id="1_sbka5"]
 [ext_resource type="FontFile" uid="uid://cxcqx2i8g8dg1" path="res://Cabezones/fonts/Rowdies-Regular.ttf" id="2_du4bu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbka5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i643h"]
 bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du4bu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w3wv"]
 bg_color = Color(0, 0.188235, 0.121569, 0.72549)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -32,14 +32,14 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i643h"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbka5"]
 bg_color = Color(0.956863, 0.784314, 0.129412, 0.215686)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w3wv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du4bu"]
 bg_color = Color(0, 0.188235, 0.121569, 0.72549)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -89,40 +89,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.0
+offset_left = -289.0
 offset_top = -14.0
-offset_right = 216.0
+offset_right = 280.0
 offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="btNormal" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
-theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
-theme_override_fonts/font = ExtResource("2_du4bu")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_sbka5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_du4bu")
-text = "Nivel Base
-"
-
-[node name="btApocalipsis" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
-theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
-theme_override_fonts/font = ExtResource("2_du4bu")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_7maxs")
-theme_override_styles/normal = SubResource("StyleBoxFlat_nm116")
-text = "Nivel Atardecer
-"
-
-[node name="btNeon" type="Button" parent="VBoxContainer"]
+[node name="btDia" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
@@ -131,7 +107,7 @@ theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_i643h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7w3wv")
-text = "Nivel Dia
+text = "Nivel Principiante - Dia
 "
 
 [node name="btAtardecer" type="Button" parent="VBoxContainer"]
@@ -141,9 +117,33 @@ theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
 theme_override_fonts/font = ExtResource("2_du4bu")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_7maxs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nm116")
+text = "Nivel Facil - Atardecer
+"
+
+[node name="btNeon" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_sbka5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_du4bu")
+text = "Nivel Intermedio - Neon
+"
+
+[node name="btFinal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.956863, 0.784314, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 0.498039)
+theme_override_fonts/font = ExtResource("2_du4bu")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_ck42k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t8rwt")
-text = "Nivel Final
+text = "Nivel Final - Infierno
 "
 
 [node name="btMenu" type="Button" parent="VBoxContainer"]
@@ -158,8 +158,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_t8rwt")
 text = "Volver al Menu
 "
 
-[connection signal="pressed" from="VBoxContainer/btNormal" to="." method="_on_bt_normal_pressed"]
-[connection signal="pressed" from="VBoxContainer/btApocalipsis" to="." method="_on_bt_apocalipsis_pressed"]
-[connection signal="pressed" from="VBoxContainer/btNeon" to="." method="_on_bt_neon_pressed"]
-[connection signal="pressed" from="VBoxContainer/btAtardecer" to="." method="_on_bt_atardecer_pressed"]
+[connection signal="pressed" from="VBoxContainer/btDia" to="." method="_on_bt_neon_pressed"]
+[connection signal="pressed" from="VBoxContainer/btAtardecer" to="." method="_on_bt_apocalipsis_pressed"]
+[connection signal="pressed" from="VBoxContainer/btNeon" to="." method="_on_bt_normal_pressed"]
+[connection signal="pressed" from="VBoxContainer/btFinal" to="." method="_on_bt_atardecer_pressed"]
 [connection signal="pressed" from="VBoxContainer/btMenu" to="." method="_on_bt_menu_pressed"]

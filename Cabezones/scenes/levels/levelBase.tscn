@@ -123,6 +123,6 @@ player2_path = NodePath("../Player_02")
 script = ExtResource("9_owml4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1001, 109)
-scale = Vector2(0.193278, 0.107422)
+position = Vector2(153, 74.0001)
+scale = Vector2(0.193278, 0.135742)
 texture = ExtResource("10_lljny")
